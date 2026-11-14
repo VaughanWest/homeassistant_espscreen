@@ -9,7 +9,10 @@
 # GPIO12, LRCLK GPIO10, speaker data GPIO9, microphone data GPIO11); and an NS4150B amplifier whose enable is GPIO53,
 # high for on, with a pull-down that keeps it off until the firmware turns it on.
 packages:
+  microphones: !include parts/es7210.yaml
+  speaker: !include parts/es8311.yaml
   amplifier: !include parts/amplifier.yaml
+  controls: !include parts/es7210-controls.yaml
   
 substitutions:
   AUDIO_I2C: touch_bus
